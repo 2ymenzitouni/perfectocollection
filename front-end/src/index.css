@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+.all-products article > span{
+    width: 40px;
+    height: 40px;
+}
