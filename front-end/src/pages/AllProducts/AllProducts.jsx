@@ -15,7 +15,7 @@ export default function AllProducts() {
 
     return (
         <main>
-            <div className="all-products container mx-auto">
+            <div className="all-products container mx-auto pt-10">
                 <div className="heading flex px-12 justify-center items-center pb-6">
                     <h2 className='text-3xl font-bold text-left grow flex items-center gap-x-2'>Tous Produits <RiTShirt2Fill size={35}/></h2>
                     <div className="filter flex gap-x-6">

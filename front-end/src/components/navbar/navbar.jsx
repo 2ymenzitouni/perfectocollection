@@ -1,7 +1,6 @@
 import { BsCartCheck } from "react-icons/bs";
 import { IoSearchOutline } from "react-icons/io5";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import './navbar.css'
 export default function Navbar() {
     const addclass = (e) => {
@@ -15,10 +14,10 @@ export default function Navbar() {
         <div className="navbar container mx-auto border-b-2 border-gray-300 bg-white flex items-center justify-around py-4 fixed z-50 left-0 right-0 top-0" >
             <div className="logo capitalize w-50" ><a href="/home"><img src="../public/logoo.png" alt="" /></a></div>
             <ul className="flex gap-x-6" >
-                <li><a href="/all" onClick={addclass} className="py-2 px-4 bg-blue-600 font-medium rounded-xl text-white transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Nouvelle Collection</a></li>
-                <li><a href="/all" onClick={addclass} className="rounded-xl py-2 px-4 transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Hiver</a></li>
-                <li><a href="/all" onClick={addclass} className="rounded-xl py-2 px-4 transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Eté</a></li>
-                <li><a href="/all" onClick={addclass} className="rounded-xl py-2 px-4 transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Promotions</a></li>
+                <li><a href="/allproducts" onClick={addclass} className="py-2 px-4 bg-blue-600 font-medium rounded-xl text-white transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Nouvelle Collection</a></li>
+                <li><a href="/allproducts" onClick={addclass} className="rounded-xl py-2 px-4 transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Hiver</a></li>
+                <li><a href="/allproducts" onClick={addclass} className="rounded-xl py-2 px-4 transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Eté</a></li>
+                <li><a href="/allproducts" onClick={addclass} className="rounded-xl py-2 px-4 transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Promotions</a></li>
                 <li><a href="*" onClick={addclass} className="rounded-xl py-2 px-4 transition-colors hover:bg-blue-600 hover:text-white hover:font-medium">Nos Contact</a></li>
             </ul>
             <div className="user flex items-center gap-x-8">

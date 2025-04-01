@@ -17,7 +17,6 @@ export default function Dashboard() {
     const [div , setDiv] = useState("Gérer les produits")
     return (
         <>
-            <div className='bg-amber-300 text-center text-2xl'>Navbar</div>
             <main>
                 <div className="row flex">
                     <div className="col-1 flex flex-col p-8 gap-5 shadow-2xl">
