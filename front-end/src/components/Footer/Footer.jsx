@@ -5,10 +5,9 @@ import { AiFillTikTok } from "react-icons/ai";
 
 export default function Footer() {
   return (
-    <footer className='bg-gray-400 text-white flex justify-around items-start flex-wrap px-12 py-4'>
-    <div className="logo capitalize w-50" > <img src="../public/logoo.png" alt="" /> </div>
-         <p className='apropos w-3xs'>LIVRAISON A DOMICILE <br /> 
-         livraison rapide sur toutes la Tunisie Vous pouvez choisir entre l'envoi à domicile ou l'enlèvement dans l'une des boutiques perfecto de votre choix</p>
+    <footer className='bg-black text-white flex justify-around items-start flex-wrap px-12 py-4'>
+        <div className="logo self-center">logo</div>
+        <p className='apropos w-3xs'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis culpa at hic corporis nulla nostrum unde eos.</p>
         <ul>
             <li><a href="#">List1</a></li>
             <li><a href="#">List2</a></li>

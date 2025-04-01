@@ -5,26 +5,6 @@ import { FaStar } from "react-icons/fa";
 export default function Home() {
   return (
     <main>
-      <div className="hero flex overflow-scroll  h-100 bg-amber-100" ><img src="../public/awl taswira.png" alt="" className="w-full" />
-        <div className="col2 flex w-full gap-x-2">
-          <img src="../public/beige jacket.jpg" alt="" className="w-3xs" />
-          <img src="../public/jacket gris 2.jpg" alt="" className="w-3xs" />
-          <img src="../public/jacket blanc sale 5.jpg" alt="" className="w-3xl " />
-        </div>
-
-      </div>
-      <div className="services flex px-8">
-        <div className="service1">
-          <div className="icon"></div>
-          <div className="information">
-            <h4> LIVRAISON A DOMICILE </h4>
-            <p> livraison rapide sur toutes la Tunisie
-              Vous pouvez choisir entre l'envoi à domicile ou l'enlèvement dans l'une des boutiques perfecto de votre choix</p>
-          </div>
-        </div>
-        <div className="service2"></div>
-        <div className="service3"></div>
-      </div>
       {/* videos */}
       <div className="videos container mx-auto">
         <section className='flex gap-4 justify-center'>

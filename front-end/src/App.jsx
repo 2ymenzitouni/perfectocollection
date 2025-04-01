@@ -5,15 +5,13 @@ import Footer from './components/Footer/Footer'
 import Product from './pages/Product/Product'
 import Cart from './pages/Cart/Cart'
 import Dashboard from './pages/Dashboard/Dashboard'
-import Navbar from './components/navbar/navbar'
 function App() {
   return(
     <>
-      <Navbar/>
-      {/* <Home/>  */}
-      <Product/>
-      {/* /* <Cart/> */ }
-      {/* <Dashboard/> */}
+      {/* <Home/> */}
+      {/* <Product/> */}
+      {/* <Cart/> */}
+      <Dashboard/>
       <Footer/>
     </>
   )
