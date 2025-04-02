@@ -1,18 +1,20 @@
 {
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "mongoose": "^8.13.1",
+    "nodemon": "^3.1.9"
+  },
+  "type": "module",
   "name": "back-end",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon"
   },
-  "type":"module",
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "express": "^5.1.0",
-    "mongoose": "^8.13.1",
-    "nodemon": "^3.1.9"
-  }
+  "description": ""
 }

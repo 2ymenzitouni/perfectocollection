@@ -1,7 +1,10 @@
 import React from 'react'
 import Checkbox from '../../components/Checkbox/Checkbox'
 import { FaCartPlus } from "react-icons/fa";
+import { RxCross1 } from "react-icons/rx";
+import { useState } from 'react';
 export default function Product() {
+    const [show, setShow] = useState(false)
     return (
         <main>
             <div className="products container mx-auto ">
@@ -44,40 +47,44 @@ export default function Product() {
                         </div>
                         <div className="buttons flex gap-x-4 py-4">
                             <button className='rounded-sm bg-sky-600 py-2 px-4 text-white cursor-pointer flex items-center gap-x-2'><FaCartPlus size={25} />Ajouter Au Panier</button>
-                            <button className='rounded-sm bg-sky-600 py-2 px-4 text-white cursor-pointer inline-block'>Commander</button>
+                            <button onClick={() =>{setShow(true)}} className='rounded-sm bg-sky-600 py-2 px-4 text-white cursor-pointer inline-block'>Commander</button>
                         </div>
                     </div>
                 </section>
             </div>
-            <div className="buy flex justify-center">
-                <form action="">
+            {show && (<div className="buy absolute inset-0 w-full h-full flex justify-center items-center">
+                <div className="overlary bg-gray-700 opacity-60 absolute inset-0 w-full h-full  ">
+
+                </div>
+                <form action="" className='bg-stone-300 px-8 rounded-2xl relative'>
+                    <span onClick={()=>{setShow(false)}} className='absolute right-4 top-4 text-white bg-red-500 hover:bg-red-600 cursor-pointer rounded-full p-2'><RxCross1/></span>
                     <h2 className='text-3xl font-bold py-6 text-center'>Commander</h2>
                     <div className="product-name my-6">
                         <label htmlFor="" className='w-30 inline-block'>Nom du prduit</label>
-                        <input className="border border-gray-400 py-2 bg-gray-100 w-sm pl-4 outline-none rounded-xs" type="text" readOnly value={'product name'} />
+                        <input className="border border-gray-600 py-2 text-gray-400 bg-gray-100 w-sm pl-4 outline-none rounded-xs" type="text" readOnly value={'product name'} />
                     </div>
                     <div className="product-category my-6">
                         <label htmlFor="" className='w-30 inline-block'>Category</label>
-                        <input type="text" className='border border-gray-400 py-2 bg-gray-100 w-sm pl-4 outline-none rounded-xs' readOnly value={'product Category'} />
+                        <input type="text" className='border border-gray-600 text-gray-400 py-2 bg-gray-100 w-sm pl-4 outline-none rounded-xs' readOnly value={'product Category'} />
                     </div>
                     <div className="customer-name my-6">
                         <label htmlFor="" className='w-30 inline-block'>Votre Nom</label>
-                        <input type="text" className='border border-gray-400 py-2 w-sm pl-4 outline-none rounded-xs placeholder:text-gray-400' placeholder={'Foulen Fouleni'} />
+                        <input type="text" className='border border-gray-600 text-blue-600 py-2 w-sm pl-4 outline-none rounded-xs placeholder:text-gray-400' placeholder={'Foulen Fouleni'} />
                     </div>
                     <div className="customer-phone my-6">
                         <label htmlFor="" className='w-30 inline-block'>Votre Téléphone</label>
-                        <input type="text" className='border border-gray-400 py-2 w-sm pl-4 outline-none rounded-xs placeholder:text-gray-400' placeholder={'+216----'} />
+                        <input type="text" className='border border-gray-600 py-2 w-sm pl-4 outline-none rounded-xs placeholder:text-gray-400' placeholder={'+216----'} />
                     </div>
                     <div className="customer-address my-6">
                         <label htmlFor="" className='w-30 inline-block'>Addresse</label>
-                        <input type="text" className='border border-gray-400 py-2 w-sm pl-4 outline-none rounded-xs placeholder:text-gray-400' placeholder={'Addresse'} />
+                        <input type="text" className='border border-gray-600 py-2 w-sm pl-4 outline-none rounded-xs placeholder:text-gray-400' placeholder={'Addresse'} />
                     </div>
                     <div className="buy flex justify-center mb-4">
                         <button className='rounded-sm bg-sky-600 py-2 px-4 text-white cursor-pointer inline-block'>Commander</button>
                     </div>
                 </form>
 
-            </div>
+            </div>)}
         </main>
     )
 }

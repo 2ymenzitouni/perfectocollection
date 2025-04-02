@@ -25,10 +25,10 @@ export default function Navbar() {
                     <span className="absolute left-2 text-gray-400"><IoSearchOutline size={20} /></span>
                     <input type="text" className="py-2 pl-10 outline-none border border-gray-300 rounded-sm w-full" placeholder="Rechercher" />
                 </div>
-                <div className="cart">
+                <div className="cart relative">
                     <a href="/cart">
                         <span className="text-2xl"><BsCartCheck /></span>
-                        <span className="compteur">4</span>
+                        <span className="compteur bg-red-600 text-white flex justify-center items-center absolute -top-2 -right-2 rounded-full w-5 h-5">4</span>
                     </a>
                 </div>
                 <a href="/dashboard">

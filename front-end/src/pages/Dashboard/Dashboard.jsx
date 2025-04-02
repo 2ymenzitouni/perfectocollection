@@ -6,6 +6,7 @@ import { HiOutlineLogout } from "react-icons/hi";
 import AddProduct from '../../components/AddProduct/AddProduct';
 import { FaUserCircle } from "react-icons/fa";
 import AddCategory from '../../components/AddCategory/AddCategory';
+import SellerPlaces from '../../components/SellerPlaces/SellerPlaces';
 import AddFabricAccessories from '../../components/AddFabricAccessories/AddFabricAccessories';
 import ManageProducts from '../../components/ManageProducts/ManageProducts';
 import Users from '../../components/Users/Users';
@@ -23,6 +24,7 @@ export default function Dashboard() {
                         <button onClick={()=>{setVisible(false);setDiv("Ajouter un produit")}} className='cursor-pointer flex items-center gap-2 bg-green-600 text-white p-2 rounded-xl justify-center font-medium'>Ajouter Un Produit<FaPlusCircle/></button>
                         <button onClick={()=>{setVisible(false);setDiv("Ajouter Tissu & Accessoires")}} className='cursor-pointer flex items-center gap-2 bg-pink-600 text-white p-2 rounded-xl justify-center font-medium'>Tissu & Accessoires<FaPlusCircle/></button>
                         <button onClick={()=>{setVisible(false);setDiv("Ajouter une catégorie")}} className='cursor-pointer flex items-center gap-2 bg-fuchsia-600 text-white p-2 rounded-xl justify-center font-medium'>Categorie<FaPlusCircle/></button>
+                        <button onClick={()=>{setVisible(false);setDiv("Lieux de ventes")}} className='cursor-pointer flex items-center gap-2 bg-amber-400 text-white p-2 rounded-xl justify-center font-medium'>Lieux de ventes<FaPlusCircle/></button>
                         <button onClick={()=>{setVisible(true);setDiv("Gérer les prodiuts")}} className='cursor-pointer flex items-center gap-2 bg-blue-600 text-white p-2 rounded-xl justify-center font-medium'>Gérer Les Produits</button>
                         <button onClick={()=>{setVisible(false);setDiv("Gérer les utilisateurs")}} className='cursor-pointer flex items-center gap-2 bg-black text-white p-2 rounded-xl justify-center font-medium'>Utilisateurs <MdManageAccounts/></button>
                         <div className="user-buttons flex items-center gap-2.5">
@@ -37,6 +39,7 @@ export default function Dashboard() {
                             {div === 'Ajouter un produit' && (<AddProduct/>)}
                             {div === 'Ajouter Tissu & Accessoires' && (<AddFabricAccessories/>)}
                             {div === 'Ajouter une catégorie' && (<AddCategory/>)}
+                            {div === 'Lieux de ventes' && (<SellerPlaces/>)}
                             {visible && (<ManageProducts/>)}
                             {div == 'Gérer les utilisateurs' && (<Users/>)}
                         </div>
