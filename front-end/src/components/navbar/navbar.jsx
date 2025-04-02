@@ -31,7 +31,7 @@ export default function Navbar() {
                         <span className="compteur bg-red-600 text-white flex justify-center items-center absolute -top-2 -right-2 rounded-full w-5 h-5">4</span>
                     </a>
                 </div>
-                <a href="/dashboard">
+                <a href="/user/dashboard">
                     <div className="account p-4 bg-gray-300 border border-gray-400 rounded-full w-12 h-12 flex justify-center items-center">
                         <p className="text-gray-600">A</p>
                     </div>

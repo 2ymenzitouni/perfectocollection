@@ -9,7 +9,7 @@ import AddCategory from '../../components/AddCategory/AddCategory';
 import SellerPlaces from '../../components/SellerPlaces/SellerPlaces';
 import AddFabricAccessories from '../../components/AddFabricAccessories/AddFabricAccessories';
 import ManageProducts from '../../components/ManageProducts/ManageProducts';
-import Users from '../../components/Users/Users';
+import { Users } from '../../components/Users/Users';
 import { FaHome } from "react-icons/fa";
 
 import { useState } from 'react';

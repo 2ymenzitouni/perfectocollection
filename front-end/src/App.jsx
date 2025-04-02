@@ -8,6 +8,7 @@ import Cart from './pages/Cart/Cart'
 import Dashboard from './pages/Dashboard/Dashboard'
 import AllProducts from './pages/AllProducts/AllProducts'
 import {BrowserRouter , Routes , Route} from "react-router"
+import { Login, Register } from './components/Users/Users'
 function App() {
   return(
     <>
@@ -18,8 +19,11 @@ function App() {
           <Route path='/home' element={<Home/>}/>
           <Route path='/allproducts' element={<AllProducts/>}/>
           <Route path='/cart' element={<Cart/>}/>
-          <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/user/dashboard' element={<Dashboard/>}/>
           <Route path='/product' element={<Product/>}/>
+          <Route path='/user/login' element={<Login/>}/>
+          <Route path='/user/register' element={<Register/>}/>
+
           <Route path='*' element={<p className='font-bold text-xl'>Page not found</p>}/>
 
         </Routes>
