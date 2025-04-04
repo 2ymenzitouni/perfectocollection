@@ -5,17 +5,12 @@ import Carousel from '../../components/Carousel/Carousel';
 
 export default function Home() {
   const slides = [
-    'hero.png',       
-    'hero.png',       
-    'hero.png',       
-   ]
+    'hero.png',
+    'hero.png',
+    'hero.png',
+  ]
   return (
     <main>
-      <div className="hero">
-        <Carousel>{slides.map((source)=>(
-          <img src={source}/>
-        ))}</Carousel>
-      </div>
       {/* videos */}
       <div className="videos container mx-auto pt-10">
         <section className='flex gap-4 justify-center'>
