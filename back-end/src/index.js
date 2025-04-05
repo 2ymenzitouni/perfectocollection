@@ -3,6 +3,8 @@ import mongoose from 'mongoose'
 import { seedInitialProducts } from '../services/productService.js'
 import productRoute from '../routes/productsRoute.js'
 import userRoute from '../routes/userRoute.js'
+// import cartRoute from '../routes/cartRoute.js'
+
 const app = express()
 const port = 3000
 
@@ -18,8 +20,7 @@ seedInitialProducts()
 
 app.use('/products',productRoute)
 app.use('/user',userRoute)
-
-
+// app.use('/cart',cartRoute)
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
