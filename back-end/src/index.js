@@ -1,8 +1,8 @@
 import express from 'express'
 import mongoose from 'mongoose'
-import {register} from '../services/userServices.js'
+import { seedInitialProducts } from '../services/productService.js'
+import productRoute from '../routes/productsRoute.js'
 import userRoute from '../routes/userRoute.js'
-
 const app = express()
 const port = 3000
 
@@ -13,11 +13,12 @@ mongoose
 .then(()=>{console.log("MongoDb Connected")})
 .catch((err)=>{console.log("Connection Failted",err)})
 
+// seedInitialProducts
+seedInitialProducts()
+
+app.use('/products',productRoute)
 app.use('/user',userRoute)
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
