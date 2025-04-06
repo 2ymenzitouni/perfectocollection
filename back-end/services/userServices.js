@@ -10,7 +10,7 @@ export async function register ({firstName,lastName,email,password}){
     const newUser = new userModel({firstName , lastName , email ,password: hashedPassword})
     await newUser.save()
 
-    return {message:newUser,statusCode:200}
+    return {message:jwtgenerator({firstName,lastName,email,password}),statusCode:200}
 }
 export async function login({email,password}){
     const findUser = await userModel.findOne({email})

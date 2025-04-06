@@ -1,4 +1,4 @@
-import mongoose , {Schema,Document, Types} from "mongoose";
+import mongoose , {Schema} from "mongoose";
 const CartStatusEnum = ['active','completed']
 
 const cartItemSchema = new Schema({

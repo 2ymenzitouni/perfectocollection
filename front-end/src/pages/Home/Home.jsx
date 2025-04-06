@@ -11,6 +11,11 @@ export default function Home() {
   ]
   return (
     <main>
+      <Carousel>
+        {slides.map((source)=>(
+          <img src={source} alt="" srcset="" />
+        ))}
+      </Carousel>
       {/* videos */}
       <div className="videos container mx-auto pt-10">
         <section className='flex gap-4 justify-center'>
