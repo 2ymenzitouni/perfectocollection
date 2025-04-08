@@ -73,3 +73,27 @@ export async function updateCartInItem({productId,quantity,userId}) {
     const updatedCart = await cart.save()
     return {message:updatedCart , statusCode:200}
 }
+export async function deleteItemIncart({productId,userId}){
+    const cart = await getActiveCartForUser({userId:userId})
+    const existsInCart = cart.items.find((p)=>p.product.toString() === productId)
+    if(!existsInCart){
+        return {message:"item does not exist in cart",statusCode:400}
+    }
+    const otherCartItems = cart.items.filter((p)=> p.product.toString() !== productId)
+    const total = otherCartItems.reduce((sum,product)=>{
+        sum += product.quantity * product.unitPrice
+        return sum
+    },0)
+    cart.items = otherCartItems
+    cart.totalAmount = total
+    const updatedCart = await cart.save()
+    return {message:updatedCart , statusCode:200}
+}
+
+export async function clearCart ({userId}) {
+    const cart = await getActiveCartForUser({userId})
+    cart.items = []
+    cart.totalAmount = 0
+    const updatedCart = await cart.save()
+    return {message:updatedCart , statusCode:200}
+}
