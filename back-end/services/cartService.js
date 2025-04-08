@@ -29,7 +29,7 @@ export async function addItemToCart({userId,productId,quantity}) {
         return {message:"product not found!",statusCode:400}
     }
 
-    if (product.Stock < quantity){
+    if (product.stock < quantity){
         return {message:"this item is out of stock",statusCode:400}
     }
     // update the totalamount for the cart
@@ -38,4 +38,38 @@ export async function addItemToCart({userId,productId,quantity}) {
 
     const updateCart = await cart.save()
     return {message:updateCart,statusCode:200}
+}
+
+export async function updateCartInItem({productId,quantity,userId}) {
+    const cart = await getActiveCartForUser({userId})
+    const existsInCart = cart.items.find((p)=>p.product.toString() === productId)
+    if(!existsInCart){
+        return {message:"item does not exist in cart",statusCode:400}
+    }
+
+    const product = await productModel.findById(productId)
+
+    if(!product){
+        return {message:"product not found!",statusCode:400}
+    }
+
+    if (product.stock < quantity){
+        return {message:"this item is out of stock",statusCode:400}
+    }
+    // const existsInCart = cart.items.find((p)=>p.product.toString() === productId)
+    // existsInCart.quantity = quantity
+
+    const otherCartItems = cart.items.filter((p)=> p.product.toString() !== productId)
+    // calculate total amount for cart
+    let total = otherCartItems.reduce((sum,product)=>{
+        sum += product.quantity * product.unitPrice
+        return sum
+    },0)
+
+    existsInCart.quantity = quantity
+    total += existsInCart.quantity  * existsInCart.unitPrice
+    cart.totalAmount = total
+    
+    const updatedCart = await cart.save()
+    return {message:updatedCart , statusCode:200}
 }
